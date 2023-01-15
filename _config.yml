@@ -1,0 +1,86 @@
+#
+# Site settings
+#
+remote_theme: LeakyAbstractions/pretty-docs
+url: https://pabloavi.github.io
+baseurl: ""
+title: &site_title Documentación
+description: &site_description Información detallada de todos los proyectos de Pablo Avilés
+branding:
+  icon:
+    name: icon_documents_alt
+  highlight: "pabloavi"
+  bold: Docs
+markdown: kramdown
+kramdown:
+  auto_ids: true
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  footnote_nr: 1
+  parse_block_html: true
+
+
+#
+# Owner
+#
+owner:
+  name: Pablo Avilés
+  twitter: &site_owner_twitter false
+  copyright:
+    notice: Copyright
+    author: "[Pablo Avilés](https://pabloavi.github.io/)"
+
+
+#
+# Social
+#
+open_graph:
+  title: *site_title
+  site_name: *site_title
+  description: *site_description
+  locale: en_US
+  image: /assets/images/thumb.png
+twitter_cards:
+  title: *site_title
+  description: *site_description
+  creator: *site_owner_twitter
+  card: summary_large_image
+  image: /assets/images/thumb.png
+share:
+  facebook: false
+  twitter: false
+  github: false
+
+
+# Google Analytics
+google_analytics: UA-61670496-5
+
+
+#
+# Collections
+#
+collections:
+  doc:
+    output: true
+    permalink: /:path.html
+
+
+#
+# Default values
+#
+defaults:
+  -
+    scope:
+      path: ""
+      type: doc
+    values:
+      layout: doc
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: doc
